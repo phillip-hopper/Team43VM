@@ -32,6 +32,14 @@ The Door43 repository has already been cloned to /var/www/projects/Door43. To ru
   * shutdown: `vagrant shutdown <name>`
   * delete: `vagrant destroy -f <name>`
 
+### Updating
+When a new version of the virtual machine is available, you can update to the new version using the following steps. **WARNING:** this process will delete your old VM and replace it with the new one. All files that you added or changed will be lost, so make a backup.
+* Commit all changes in your repositories and push the changes to Github.
+* Shut down the VM.
+* Open a command prompt in the directory containing this repository.
+* Enter `vagrant box update`. This will download the newest version of the VM.
+* Enter `vagrant up`. This will configure the update and start the new VM.
+
 ### Configuration
 * username=team43, password=password
 * password-less sudo
