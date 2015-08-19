@@ -15,12 +15,20 @@ After you successfully complete these instructions, you will be able to launch t
 * Install the Requirements listed above
 * Clone this repository to your computer
 * Open a terminal/command window and `cd` to the repository directory
-* Windows: run `vagrant.bat`
-* Linux, Mac OSX: run `vagrant up`
+* Windows: run `vagrant-up.bat`
+* Linux, Mac OSX: run `vagrant up --no-provision`
 
 The VM itself is not in this repository. It's a 2GB download that Vagrant will retrieve during the initialization process.
 
 The Door43 repository has already been cloned to /var/www/projects/Door43. To run the door43.org website locally browse to [http://door43.localhost](http://door43.localhost) inside the VM.
+
+### Provisioning
+If you intend to use pandoc or tex, you will need to provision the VM using these instructions. The provisioning process will probably take well over one hour even if you have a fast internet connection. During this process haskell, pandoc, texlive, and the Google Noto fonts will be installed.
+
+* Shut down the VM.
+* Open a terminal/command window and `cd` to the repository directory
+* Windows: run `vagrant-provision.bat`
+* Linux, Mac OSX: run `vagrant up --provision`
 
 ### Usage
 * Clone this repo
@@ -31,6 +39,7 @@ The Door43 repository has already been cloned to /var/www/projects/Door43. To ru
   * halt: `vagrant halt <name>`
   * shutdown: `vagrant shutdown <name>`
   * delete: `vagrant destroy -f <name>`
+  * provision: `vagrant up --provision`
 
 ### Updating
 When a new version of the virtual machine is available, you can update to the new version using the following steps. **WARNING:** this process will delete your old VM and replace it with the new one. All files that you added or changed will be lost, so make a backup.

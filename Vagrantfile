@@ -44,6 +44,7 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
+    vb.name = "Team43-Dev"
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
   #
@@ -70,4 +71,5 @@ Vagrant.configure(2) do |config|
   # SHELL
   config.ssh.username = "team43"
   config.ssh.password = "password"
+  config.vm.provision :shell, path: "bootstrap.sh"
 end
